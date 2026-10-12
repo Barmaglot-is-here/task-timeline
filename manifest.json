@@ -1,0 +1,10 @@
+{
+	"id": "task-timeline",
+	"name": "Task Timeline",
+	"version": "1.0.0",
+	"minAppVersion": "1.5.7",
+	"description": "Плагин для управления задачами и расписанием в рамках дня. Показывает занятое и доступное для распределения время.",
+	"author": "Barmaglot-is-here",
+	"authorUrl": "https://github.com/Barmaglot-is-here",
+	"isDesktopOnly": false
+}

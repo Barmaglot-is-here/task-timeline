@@ -487,7 +487,7 @@ export class TaskTimelineSettingTab
 
 
     // ==================================================
-    // Предпросмотр текущей недели
+    // Предпросмотр расписания от начала цикла
     // ==================================================
 
     private addWeekPreview(
@@ -497,7 +497,7 @@ export class TaskTimelineSettingTab
         const setting =
             new Setting(container)
                 .setName(
-                    "Текущая неделя"
+                    "Расписание"
                 );
 
 
@@ -543,6 +543,10 @@ export class TaskTimelineSettingTab
         );
 
 
+        const previewStart =
+            this.getCycleStartDate() ?? monday;
+
+
         const dayNames = [
             "Пн",
             "Вт",
@@ -561,11 +565,11 @@ export class TaskTimelineSettingTab
         ) {
 
             const date =
-                new Date(monday);
+                new Date(previewStart);
 
 
             date.setDate(
-                monday.getDate() +
+                previewStart.getDate() +
                 i
             );
 
@@ -596,7 +600,7 @@ export class TaskTimelineSettingTab
 
 
             day.setText(
-                dayNames[i]
+                dayNames[(date.getDay() + 6) % 7]!
             );
         }
     }
